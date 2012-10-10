@@ -18,18 +18,18 @@ If you update the Airbrake library, you *must* update the service endpoint URL f
 ```php
 <?php
 
-// Not needef if you auoload the library
-$this->load->library('AirbrakeCI');
+// Not needed if you auoload the library
+$this->load->library('airbrake_codebase');
 
 // Send a error message
-$this->airbrakeci->notifyOnError('Error message'); 
+$this->airbrake_codebase->notifyOnError('Error message'); 
 
 // Or send an exception that may have been generated or caught.
 try {
     throw new Exception('This is my exception');
 
 } catch (Exception $exception) {
-    $this->airbrakeci->notifyOnException($exception);
+    $this->airbrake_codebase->notifyOnException($exception);
 }
 
 ```

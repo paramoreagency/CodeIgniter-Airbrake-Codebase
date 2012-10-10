@@ -1,14 +1,14 @@
 <?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 
 /**
- * @package		AirbrakeCodebase
+ * @package		Airbrake_codebase
  * @author		Hélder Duarte <cossou@gmail.com> (Modified by Jesse Bunch <jbunch@paramore.is>)
  * @copyright	(c) 2012 Hélder Duarte
  * @license		http://www.opensource.org/licenses/mit-license.php
  *
  */
 
-class AirbrakeCodebase 
+class Airbrake_codebase 
 {
 
 	private $client;
