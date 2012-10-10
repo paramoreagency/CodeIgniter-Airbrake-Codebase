@@ -1,27 +1,35 @@
 CodeIgniter Airbrake Library
 ============================
 
-Just a small library for Airbrake based on [PHP Airbrake](https://raw.github.com/nodrew/php-airbrake/) from Drew Butler.
+Wrapper library for Airbrake that works with Codeigniter and Codebase. Note: This is a fork of the library
+originally created here: https://github.com/cossou/CodeIgniter-Airbrake.
 
-#Usage
+# Before Updating Airbrake
 
-Get the last version of https://github.com/nodrew/php-airbrake/ and put it in the third_party folder.  
-Put your API in the config/airbrake.php and then:
+If you update the Airbrake library, you *must* update the service endpoint URL found in `third_party/Airbrake/Connection.php`.
+
+# Installation
+
+1. Copy the files to their respective directories.
+2. Set the API key in the airbrake.php config file.
+3. Load the Airbrake library, either when needed or in the autoload.php config file.
+4. Use the code below to send errors to Codebase:
 
 ```php
 <?php
 
+// Not needef if you auoload the library
 $this->load->library('AirbrakeCI');
 
 // Send a error message
-$airbrakeci->notifyOnError('Error message'); 
+$this->airbrakeci->notifyOnError('Error message'); 
 
 // Or send an exception that may have been generated or caught.
 try {
     throw new Exception('This is my exception');
 
 } catch (Exception $exception) {
-    $airbrakeci->notifyOnException($exception);
+    $this->airbrakeci->notifyOnException($exception);
 }
 
 ```
