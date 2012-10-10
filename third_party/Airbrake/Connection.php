@@ -11,7 +11,7 @@ namespace Airbrake;
  */
 class Connection
 {
-    const SERVICE_URL = 'http://airbrakeapp.com/notifier_api/v2/notices';
+    const SERVICE_URL = 'https://exceptions.codebasehq.com/notifier_api/v2/notices';
 
     protected $configuration = null;
     protected $headers = array();
